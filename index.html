@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Puzzle avec vos photos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🧩 Crée ton Puzzle avec une photo</h1>
+
+    <div class="controls" align="center">
+      <label>Image : <input type="file" id="upload" accept="image/*" /></label><br>
+	  </br>
+      <label>Lignes : <input type="number" id="rows" min="2" max="10" value="3" /></label>
+      <label>Colonnes : <input type="number" id="cols" min="2" max="10" value="3" /></label>
+	  </br>
+      <button id="generate">Générer le puzzle</button>
+    </div>
+	</br>
+    <canvas id="puzzleCanvas" width="600" height="600"></canvas>
+  </div>
+  <div id="popup" style="
+	position: fixed;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	background: #333;
+	color: #fff;
+	padding: 15px 30px;
+	border-radius: 8px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 16px;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease;
+	z-index: 1000;
+	">
+	</div>
+	<img id="fullImage" src="" alt="Puzzle terminé" style="display:none; position:absolute; top:50%; left:50%; transform: translate(-50%, -50%); max-width:90vw; max-height:90vh; border-radius:12px; box-shadow: 0 0 20px #00bcd4cc; opacity:0; transition: opacity 1s ease;">
+  <script src="script.js"></script>
+</body>
+</html>
